@@ -1,17 +1,15 @@
-const MyNameApp = {
+
+Vue.createApp({
     data() {
         return {
-            name: "",
-            age: 44,
-            input_name: ""
+            firstName: 'John',
+            lastName: 'Doe',
+            url: 'https://www.google.com',
+        raw_url: '<a href="https://www.google.com" target="_blank">Google</a>'
         }
     },
-    methods: {
-        submitForm(e) {
-            e.preventDefault();
-            this.name = this.input_name;
-        }
+    fullName() {
+        return `${this.firstName} ${this.lastName.toUpperCase()}`
     }
-}
 
-Vue.createApp(MyNameApp).mount("#app");
+}).mount("#app");
